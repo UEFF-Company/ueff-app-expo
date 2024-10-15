@@ -27,14 +27,9 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
-      - name: "Log in to Expo"
-        env:
-          EXPO_CLI_USERNAME: ${{ secrets.EXPO_CLI_USERNAME }}
-          EXPO_CLI_PASSWORD: ${{ secrets.EXPO_CLI_PASSWORD }}
-        run: npx expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD --non-interactive
-
       - name: "Build Expo project"
-        run: npx expo build:android --non-interactive
+        run: |
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build -p android -e development --non-interactive
 
       - name: "Upload artifact"
         uses: actions/upload-artifact@v4
