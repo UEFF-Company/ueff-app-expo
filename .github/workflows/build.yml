@@ -1,0 +1,40 @@
+name: Build Expo Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Set up Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14"
+
+      - name: "Install dependencies"
+        run: npm install
+
+      - name: "Log in to Expo"
+        env:
+          EXPO_CLI_USERNAME: ${{ secrets.EXPO_CLI_USERNAME }}
+          EXPO_CLI_PASSWORD: ${{ secrets.EXPO_CLI_PASSWORD }}
+        run: npx expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD --non-interactive
+
+      - name: "Build Expo project"
+        run: npx expo build:android --non-interactive
+
+      - name: "Upload artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: expo-build
+          path: dist/

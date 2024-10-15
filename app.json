@@ -31,6 +31,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "61a60ddb-890a-4ea8-866d-5f924c38eff9"
+      }
+    },
+    "owner": "ueff"
   }
 }
