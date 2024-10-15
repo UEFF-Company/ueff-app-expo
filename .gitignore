@@ -18,3 +18,7 @@ web-build/
 
 expo-env.d.ts
 # @end expo-cli
+
+# ignore ios and android directories in the root of the project
+ios/
+android/
