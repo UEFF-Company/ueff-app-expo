@@ -1,6 +1,9 @@
 name: Build Expo Project
 
 on:
+  #manual trigger
+  workflow_dispatch:
+  #on push
   push:
     branches:
       - main
