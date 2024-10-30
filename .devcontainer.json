@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "build": "npx expo prebuild",
+    "test": "npm run test"
+  }
+}
