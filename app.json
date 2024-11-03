@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ueff-app-expo",
-    "slug": "ueff-app-expo",
+    "name": "ueff24",
+    "slug": "ueff24",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,15 +13,13 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.ueff.ueffappexpo"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.ueff.ueffappexpo"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -33,12 +31,6 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "eas": {
-        "projectId": "61a60ddb-890a-4ea8-866d-5f924c38eff9"
-      }
-    },
-    "owner": "ueff"
+    }
   }
 }
