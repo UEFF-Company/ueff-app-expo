@@ -48,3 +48,60 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Using EAS Build
+
+To use EAS (Expo Application Services) build, follow these steps:
+
+1. Install the EAS CLI:
+
+   ```bash
+   npm install -g eas-cli
+   ```
+
+2. Log in to your Expo account:
+
+   ```bash
+   eas login
+   ```
+
+3. Configure your `eas.json` file with the appropriate build profiles. For example:
+
+   ```json
+   {
+     "build": {
+       "production": {
+         "android": {
+           "workflow": "managed"
+         },
+         "ios": {
+           "workflow": "managed"
+         }
+       },
+       "pr": {
+         "android": {
+           "workflow": "managed"
+         },
+         "ios": {
+           "workflow": "managed"
+         }
+       }
+     }
+   }
+   ```
+
+4. Trigger a build:
+
+   ```bash
+   eas build --profile production --platform android
+   eas build --profile production --platform ios
+   ```
+
+   For PR builds, use the `pr` profile:
+
+   ```bash
+   eas build --profile pr --platform android
+   eas build --profile pr --platform ios
+   ```
+
+5. Monitor your build on the [Expo dashboard](https://expo.dev/accounts/your-username/projects/your-project/builds).
