@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '14'
 
@@ -28,11 +28,9 @@ jobs:
       - name: EAS Build for main branch
         if: github.ref == 'refs/heads/main'
         run: |
-          eas build --profile production --platform android
-          eas build --profile production --platform ios
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --e production --p android
 
       - name: EAS Build for PR
         if: github.event_name == 'pull_request'
         run: |
-          eas build --profile pr --platform android
-          eas build --profile pr --platform ios
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build - development --p android

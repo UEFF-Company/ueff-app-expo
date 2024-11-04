@@ -1,20 +1,21 @@
 {
+  "cli": {
+    "version": ">= 12.5.2",
+    "appVersionSource": "remote"
+  },
   "build": {
-    "production": {
-      "android": {
-        "workflow": "managed"
-      },
-      "ios": {
-        "workflow": "managed"
-      }
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
     },
-    "pr": {
-      "android": {
-        "workflow": "managed"
-      },
-      "ios": {
-        "workflow": "managed"
-      }
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true
     }
+  },
+  "submit": {
+    "production": {}
   }
 }

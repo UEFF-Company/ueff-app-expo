@@ -65,32 +65,7 @@ To use EAS (Expo Application Services) build, follow these steps:
    eas login
    ```
 
-3. Configure your `eas.json` file with the appropriate build profiles. For example:
-
-   ```json
-   {
-     "build": {
-       "production": {
-         "android": {
-           "workflow": "managed"
-         },
-         "ios": {
-           "workflow": "managed"
-         }
-       },
-       "pr": {
-         "android": {
-           "workflow": "managed"
-         },
-         "ios": {
-           "workflow": "managed"
-         }
-       }
-     }
-   }
-   ```
-
-4. Trigger a build:
+3. Trigger a build:
 
    ```bash
    eas build --profile production --platform android
@@ -104,4 +79,4 @@ To use EAS (Expo Application Services) build, follow these steps:
    eas build --profile pr --platform ios
    ```
 
-5. Monitor your build on the [Expo dashboard](https://expo.dev/accounts/your-username/projects/your-project/builds).
+4. Monitor your build on the [Expo dashboard](https://expo.dev/accounts/your-username/projects/your-project/builds).
