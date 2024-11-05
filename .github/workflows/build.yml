@@ -33,4 +33,4 @@ jobs:
       - name: EAS Build for PR
         if: github.event_name == 'pull_request'
         run: |
-          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile pr --platform android
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android
