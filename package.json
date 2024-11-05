@@ -10,7 +10,12 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "build": "eas build"
+    "build": "eas build",
+    "clean": "rm -rf node_modules && npm install",
+    "format": "prettier --write .",
+    "check-updates": "npx npm-check-updates",
+    "tsc": "tsc --noEmit",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
   "jest": {
     "preset": "jest-expo"
