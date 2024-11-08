@@ -33,9 +33,17 @@
       "extends": "preview",
       "ios": { "simulator": false }
     },
-    "production": {}
+    "production": {
+
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "track": "internal",
+        "releaseStatus": "draft",
+        "changesNotSentForReview": true
+      }
+    }
   }
 }
