@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '23'
 
+      - name: Install Expo CLI
+        run: npm install -g expo-cli
+
       - name: Expo Prebuild
         run: expo prebuild
 
