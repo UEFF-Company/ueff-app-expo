@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   build:
@@ -19,6 +20,9 @@ jobs:
         with:
           node-version: '23'
 
+      - name: Expo Prebuild
+        run: expo prebuild
+
       - name: Install dependencies
         run: npm install
 
@@ -31,6 +35,6 @@ jobs:
           EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile production --platform android --non-interactive
 
       - name: EAS Build for PR
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'eas-build')
         run: |
           EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android --non-interactive
