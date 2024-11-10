@@ -1,0 +1,36 @@
+name: EAS Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
+      - name: EAS Build for main branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile production --platform android --non-interactive
+
+      - name: EAS Build for PR
+        if: github.event_name == 'pull_request'
+        run: |
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android --non-interactive

@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "ueff24",
     "name": "ueff24",
     "slug": "ueff24",
     "version": "1.0.0",
@@ -19,7 +20,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ueaff24.mainapp"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +33,41 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7452e83f-6e44-41bf-b010-ccdd304dc0c9"
+      }
+    }
+  },
+  "extra": {
+    "eas": {
+      "projectId": "61a60ddb-890a-4ea8-866d-5f924c38eff9"
+    }
+  },
+  "eas": {
+    "build": {
+      "production": {
+        "android": {
+          "workflow": "managed"
+        },
+        "ios": {
+          "workflow": "managed"
+        }
+      },
+      "development": {
+        "android": {
+          "workflow": "managed",
+          "distribution": "internal",
+          "developmentClient": true
+        },
+        "ios": {
+          "workflow": "managed"
+        }
+      }
     }
   }
 }
