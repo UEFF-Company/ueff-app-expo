@@ -40,6 +40,13 @@
   "submit": {
     "production": {
       "android": {
+        "track": "production",
+        "releaseStatus": "completed",
+        "changesNotSentForReview": false
+      }
+    },
+    "development": {
+      "android": {
         "track": "internal",
         "releaseStatus": "draft",
         "changesNotSentForReview": true
