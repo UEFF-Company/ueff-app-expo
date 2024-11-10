@@ -28,9 +28,9 @@ jobs:
       - name: EAS Build for main branch
         if: github.ref == 'refs/heads/main'
         run: |
-          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile production --platform android
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile production --platform android --non-interactive
 
       - name: EAS Build for PR
         if: github.event_name == 'pull_request'
         run: |
-          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android
+          EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android --non-interactive
