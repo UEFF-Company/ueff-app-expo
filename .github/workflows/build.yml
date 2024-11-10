@@ -24,7 +24,7 @@ jobs:
         run: yarn install
 
       - name: Expo PRebuild
-        run: npx expo prebuild
+        run: npx expo prebuild --platform android
 
       - name: EAS Build for main branch
         if: github.ref == 'refs/heads/main'
