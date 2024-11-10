@@ -16,7 +16,7 @@
     "check-updates": "npx npm-check-updates",
     "tsc": "tsc --noEmit",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "export:web": "expo export -p web --output dist --source-map --no-minify"
+    "export:web": "expo export -p web --source-maps --no-minify --dev --output-dir dist"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
