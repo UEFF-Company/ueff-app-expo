@@ -21,7 +21,7 @@ jobs:
           node-version: '23'
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Expo PRebuild
         run: npx expo prebuild
