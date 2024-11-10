@@ -34,7 +34,12 @@
       "ios": { "simulator": false }
     },
     "production": {
-
+      "android": {
+        "image": "latest"
+      },
+      "ios": {
+        "image": "latest"
+      }
     }
   },
   "submit": {
