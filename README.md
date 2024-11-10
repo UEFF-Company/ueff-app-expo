@@ -80,3 +80,15 @@ To use EAS (Expo Application Services) build, follow these steps:
    ```
 
 4. Monitor your build on the [Expo dashboard](https://expo.dev/accounts/your-username/projects/your-project/builds).
+
+## Triggering EAS Build with `eas-build` Tag
+
+To trigger an EAS build manually with the `eas-build` tag on a pull request, follow these steps:
+
+1. Create a pull request.
+2. Add the `eas-build` tag to the pull request.
+3. The EAS build will be triggered automatically when the tag is added.
+
+## Running `expo prebuild` in the Pipeline
+
+To run `expo prebuild` in the pipeline, ensure that the `expo prebuild` step is added before the `Install dependencies` step in the GitHub Actions workflow file `.github/workflows/build.yml`.

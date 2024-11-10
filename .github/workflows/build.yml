@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   build:
@@ -22,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
+      - name: Expo PRebuild
+        run: npx expo prebuild
 
       - name: EAS Build for main branch
         if: github.ref == 'refs/heads/main'
@@ -31,6 +32,6 @@ jobs:
           EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile production --platform android --non-interactive
 
       - name: EAS Build for PR
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'eas-build')
         run: |
           EXPO_TOKEN=${{ secrets.EXPO_TOKEN }} eas build --profile development --platform android --non-interactive
