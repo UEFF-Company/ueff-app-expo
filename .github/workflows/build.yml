@@ -23,8 +23,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Expo PRebuild
+      - name: Expo Prebuild
         run: npx expo prebuild --platform android
+
+      - name: Install EAS CLI
+        run: yarn global add eas-cli
 
       - name: EAS Build for main branch
         if: github.ref == 'refs/heads/main'
