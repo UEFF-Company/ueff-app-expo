@@ -16,7 +16,6 @@
     "check-updates": "npx npm-check-updates",
     "tsc": "tsc --noEmit",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "profile:web": "expo build:web --no-minify --output dist --source-map",
     "export:web": "expo export -p web --output dist --source-map --no-minify"
   },
   "dependencies": {
